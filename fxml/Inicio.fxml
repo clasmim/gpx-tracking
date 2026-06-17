@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="570.0" minWidth="840.0" prefHeight="570.0" prefWidth="840.0" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InicioController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="320.0" spacing="20.0" styleClass="panel-izquierdo">
+         <children>
+            <ImageView fitHeight="220.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../source/resources/logo/logo_CRLS_lima.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label styleClass="app-nombre-principal" text="Club Running La Safor" />
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0">
+               <children>
+                  <Label styleClass="tics-texto" text="✓  Registra tus actividades GPX">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label styleClass="tics-texto" text="✓  Visualiza tus rutas en el mapa">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label styleClass="tics-texto" text="✓  Perfil de desnivel interactivo">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="44.0" styleClass="tics-texto" text="✓  Añade anotaciones a tus rutas">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="61.0" styleClass="tics-texto" text="✓  Consulta tu acumulado mensual ">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></VBox>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="444.0" styleClass="version-texto" text="IPC 2025/2026" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <StackPane styleClass="panel-derecho-inicio" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER_LEFT" maxWidth="520.0" prefHeight="200.0" prefWidth="480.0" spacing="22.0" StackPane.alignment="CENTER">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label styleClass="titulo-pantalla" text="Bienvenido al club" />
+                        <Label maxWidth="420.0" prefHeight="38.0" prefWidth="384.0" styleClass="subtitulo-pantalla" text="Tu aplicación de running para gestionar rutas, actividades y estadísticas." textOverrun="CLIP" wrapText="true" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox onMouseClicked="#irLogin" styleClass="tarjeta-acceso-principal">
+                     <children>
+                        <Label styleClass="tarjeta-acceso-titulo" text="Iniciar sesión" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="tarjeta-acceso-subtitulo" text="¿Ya eres socio?  Entra aquí" />
+                     </children></VBox>
+                  <Separator maxWidth="420.0" minWidth="420.0" prefWidth="420.0" styleClass="separador-linea" />
+                  <VBox onMouseClicked="#irRegister" styleClass="tarjeta-acceso-secundaria">
+                     <children>
+                        <Label styleClass="tarjeta-acceso-titulo" text="Crear cuenta nueva" />
+                        <Label styleClass="tarjeta-acceso-subtitulo" text="¿Todavía no eres socio? Únete al club." />
+                     </children></VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</HBox>

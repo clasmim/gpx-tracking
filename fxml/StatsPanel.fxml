@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox minWidth="240.0" prefWidth="260.0" maxWidth="260.0"
+      spacing="6.0"
+      stylesheets="@../styles/estilos.css"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.StatsPanelController"
+      styleClass="stats-panel-right">
+
+    <padding>
+        <Insets top="42.0" right="10.0" bottom="16.0" left="10.0"/>
+    </padding>
+
+    <!-- ── Título Estadísticas ───────────────────────────────── -->
+    <Label text="Estadísticas" styleClass="stats-titulo-panel">
+        <VBox.margin><Insets bottom="2.0"/></VBox.margin>
+    </Label>
+
+    <!-- ── Nombre actividad + fecha ─────────────────────────── -->
+    <Label fx:id="lblNombreActividad" text="—" wrapText="true"
+           styleClass="stats-activity-name" maxWidth="240.0"/>
+
+    <Label fx:id="lblFecha" text="—" styleClass="stats-fecha">
+        <VBox.margin><Insets bottom="8.0"/></VBox.margin>
+    </Label>
+
+    <!-- ── Distancia ─────────────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+
+            <Label styleClass="stat-label" text="DISTANCIA"/>
+       
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblDistancia" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="km"/>
+        </HBox>
+    </VBox>
+
+    <!-- ── Duración ──────────────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+        
+            <Label styleClass="stat-label" text="DURACIÓN"/>
+       
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblDuracion" styleClass="stat-value" text="—"/>
+        </HBox>
+    </VBox>
+
+    <!-- ── Velocidad media ───────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+       
+            <Label styleClass="stat-label" text="VELOCIDAD MEDIA"/>
+      
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblVelocidad" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="km/h"/>
+        </HBox>
+    </VBox>
+
+    <!-- ── Ritmo ─────────────────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+        
+            <Label styleClass="stat-label" text="RITMO"/>
+    
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblRitmo" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="min/km"/>
+        </HBox>
+    </VBox>
+
+    <Separator>
+        <VBox.margin><Insets top="4.0" bottom="4.0"/></VBox.margin>
+    </Separator>
+
+    <!-- ── Desnivel positivo ─────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+        
+            <Label styleClass="stat-label" text="DESNIVEL POSITIVO"/>
+       
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblDesnivelPos" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="m"/>
+        </HBox>
+    </VBox>
+
+    <!-- ── Desnivel negativo ─────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+       
+            <Label styleClass="stat-label" text="DESNIVEL NEGATIVO"/>
+       
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblDesnivelNeg" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="m"/>
+        </HBox>
+    </VBox>
+
+    <Separator>
+        <VBox.margin><Insets top="4.0" bottom="4.0"/></VBox.margin>
+    </Separator>
+
+    <!-- ── Altitud mínima ────────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+        
+            <Label styleClass="stat-label" text="ALTITUD MÍNIMA"/>
+       
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblAltMin" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="m"/>
+        </HBox>
+    </VBox>
+
+    <!-- ── Altitud máxima ────────────────────────────────────── -->
+    <VBox styleClass="stat-card-moderna">
+       
+            <Label styleClass="stat-label" text="ALTITUD MÁXIMA"/>
+        
+        <HBox alignment="BASELINE_LEFT" spacing="4.0">
+            <Label fx:id="lblAltMax" styleClass="stat-value" text="—"/>
+            <Label styleClass="stat-unit" text="m"/>
+        </HBox>
+    </VBox>
+
+    <!-- ── Leyenda del mapa ──────────────────────────────────── -->
+    <Separator>
+        <VBox.margin><Insets top="4.0" bottom="4.0"/></VBox.margin>
+    </Separator>
+
+    <VBox styleClass="stat-card-moderna" spacing="6.0">
+        <Label styleClass="stat-label" text="LEYENDA DEL MAPA"/>
+        <HBox spacing="6.0" alignment="CENTER_LEFT">
+            <Circle radius="5.0" fill="LIMEGREEN" stroke="WHITE" strokeWidth="1.5"/>
+            <Label styleClass="stats-fecha" text="Inicio carrera"/>
+        </HBox>
+        <HBox spacing="6.0" alignment="CENTER_LEFT">
+            <Circle radius="5.0" fill="RED" stroke="WHITE" strokeWidth="1.5"/>
+            <Label styleClass="stats-fecha" text="Fin carrera"/>
+        </HBox>
+        <HBox spacing="6.0" alignment="CENTER_LEFT">
+            <Circle radius="5.0" fill="DEEPSKYBLUE" stroke="WHITE" strokeWidth="1.5"/>
+            <Label styleClass="stats-fecha" text="Posición actual"/>
+        </HBox>
+    </VBox>
+
+</VBox>

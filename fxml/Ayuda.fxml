@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox minWidth="620.0" prefWidth="680.0" prefHeight="580.0"
+      spacing="0"
+      stylesheets="@../styles/estilos.css"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.AyudaController">
+
+   <!-- CABECERA -->
+   <HBox alignment="CENTER_LEFT" spacing="16.0" styleClass="ayuda-cabecera">
+      <padding><Insets top="20.0" bottom="20.0" left="28.0" right="28.0" /></padding>
+      <ImageView fitHeight="52.0" fitWidth="72.0" preserveRatio="true">
+         <image><Image url="@../source/resources/logo/logo_CRLS_lima.png" /></image>
+      </ImageView>
+      <VBox spacing="2.0">
+         <Label styleClass="ayuda-titulo" text="Club Running La Safor" />
+         <Label styleClass="ayuda-subtitulo" text="Guía de uso y acerca de la aplicación" />
+      </VBox>
+   </HBox>
+
+   <!-- CONTENIDO CON SCROLL -->
+   <ScrollPane fitToWidth="true" styleClass="ayuda-scroll" VBox.vgrow="ALWAYS">
+      <content>
+         <VBox spacing="24.0">
+            <padding><Insets top="24.0" bottom="24.0" left="28.0" right="28.0" /></padding>
+
+            <!-- SECCIÓN: QUÉ ES -->
+            <VBox spacing="8.0">
+               <Label styleClass="ayuda-seccion-titulo" text="¿Qué es Club Running La Safor?" />
+               <Label styleClass="ayuda-texto" wrapText="true"
+                  text="Club Running La Safor es una aplicación para que los socios del club puedan registrar sus actividades deportivas al aire libre, visualizarlas sobre el mapa y analizar su progreso mediante estadísticas detalladas." />
+            </VBox>
+
+            <Separator styleClass="ayuda-separador" />
+
+            <!-- SECCIÓN: GUÍA RÁPIDA -->
+            <VBox spacing="12.0">
+               <Label styleClass="ayuda-seccion-titulo" text="Guía rápida de uso" />
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="1. Registro e inicio de sesión" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Crea tu cuenta con un nickname único, correo electrónico, contraseña y fecha de nacimiento. Una vez registrado, inicia sesión con tu nickname y contraseña." />
+               </VBox>
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="2. Importar una actividad GPX" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Pulsa 'Importar GPX' en el panel izquierdo y selecciona un fichero GPX generado por tu reloj o dispositivo GPS. La aplicación procesará la ruta y la mostrará sobre el mapa automáticamente." />
+               </VBox>
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="3. Visualizar la ruta" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Selecciona cualquier actividad de la lista para ver su trazado sobre el mapa. Usa los botones de Zoom para ampliar o reducir la vista. Activa 'Velocidad' para colorear el trazado según el ritmo seguido en cada tramo." />
+               </VBox>
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="4. Añadir anotaciones" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Con una actividad visible, haz clic derecho sobre el mapa para añadir anotaciones: punto, texto, línea o círculo. Puedes elegir el color y el texto de cada anotación." />
+               </VBox>
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="5. Perfil de desnivel" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Bajo el mapa se muestra la gráfica de altitud a lo largo del recorrido. Pasa el ratón sobre la gráfica para ver el punto correspondiente destacado sobre el mapa." />
+               </VBox>
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="6. Acumulado y sesiones" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Accede a 'Actividades' para consultar el resumen acumulado por periodo (semana, mes, año). En 'Sesiones' puedes revisar el historial de uso de la aplicación." />
+               </VBox>
+
+               <VBox spacing="6.0">
+                  <Label styleClass="ayuda-paso-titulo" text="7. Gestión de mapas" />
+                  <Label styleClass="ayuda-texto" wrapText="true"
+                     text="Desde el botón 'Mapas' puedes consultar los mapas disponibles, añadir nuevos mapas con sus coordenadas geográficas o eliminar los que ya no necesites." />
+               </VBox>
+            </VBox>
+
+            <Separator styleClass="ayuda-separador" />
+
+            <!-- SECCIÓN: ACERCA DE -->
+            <VBox spacing="10.0">
+               <Label styleClass="ayuda-seccion-titulo" text="Acerca de" />
+
+               <HBox spacing="16.0" alignment="CENTER_LEFT">
+                  <ImageView fitHeight="64.0" fitWidth="88.0" preserveRatio="true">
+                     <image><Image url="@../source/resources/logo/logo_CRLS_lima.png" /></image>
+                  </ImageView>
+                  <VBox spacing="4.0">
+                     <Label styleClass="ayuda-texto" text="Club Running La Safor — v1.0" />
+                  </VBox>
+               </HBox>
+
+               <VBox spacing="4.0">
+                  <Label styleClass="ayuda-texto-bold" text="Autores:" />
+                  <Label styleClass="ayuda-texto" text="· Chafik Laslouni Mimouni" />
+                  <Label styleClass="ayuda-texto" text="· Cristina Nácher Bañón" />
+               </VBox>
+            </VBox>
+
+         </VBox>
+      </content>
+   </ScrollPane>
+
+   <!-- PIE: botón cerrar -->
+   <HBox alignment="CENTER_RIGHT" styleClass="ayuda-pie">
+      <padding><Insets top="14.0" bottom="14.0" left="28.0" right="28.0" /></padding>
+      <Button mnemonicParsing="false" onAction="#cerrar"
+              styleClass="boton-principal" text="Cerrar" />
+   </HBox>
+
+</VBox>

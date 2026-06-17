@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefWidth="760.0" prefHeight="560.0"
+            stylesheets="@../styles/estilos.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.HistorialController">
+
+    <!-- ── Cabecera ── -->
+    <top>
+        <HBox prefHeight="80.0" styleClass="titulo-modificar" BorderPane.alignment="CENTER">
+            <Label text="Historial de sesiones" textFill="WHITE">
+                <HBox.margin><Insets left="40.0" top="20.0"/></HBox.margin>
+                <font><Font name="System Bold" size="28.0"/></font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- ── Contenido ── -->
+    <center>
+        <VBox spacing="12.0">
+            <padding><Insets bottom="12.0" left="24.0" right="24.0" top="15.0"/></padding>
+
+            <Label styleClass="subtitulo-pantalla"
+                   text="Cada sesión se registra automáticamente al cerrar sesión."/>
+
+            <!-- Tabla de sesiones -->
+            <TableView fx:id="sessionTable" VBox.vgrow="ALWAYS"
+                       prefHeight="240.0">
+                <columns>
+                    <TableColumn fx:id="colFechaInicio" text="Fecha inicio"    prefWidth="110"/>
+                    <TableColumn fx:id="colHoraInicio"  text="Hora inicio"     prefWidth="85"/>
+                    <TableColumn fx:id="colFechaFin"    text="Fecha fin"       prefWidth="110"/>
+                    <TableColumn fx:id="colHoraFin"     text="Hora fin"        prefWidth="85"/>
+                    <TableColumn fx:id="colDuracion"    text="Duración (min)"  prefWidth="110"/>
+                    <TableColumn fx:id="colImportadas"  text="Importadas"      prefWidth="85"/>
+                    <TableColumn fx:id="colVistas"      text="Vistas"          prefWidth="70"/>
+                    <TableColumn fx:id="colAnotaciones" text="Anotaciones"     prefWidth="90"/>
+                </columns>
+            </TableView>
+
+            <Separator/>
+
+            <!-- Totales acumulados -->
+            <Label text="Totales acumulados">
+                <font><Font name="System Bold" size="15.0"/></font>
+            </Label>
+
+            <GridPane hgap="20.0" vgap="6.0">
+                <Label styleClass="campo-label" text="Sesiones:"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="lblTotalSesiones" styleClass="stat-valor" text="—"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label styleClass="campo-label" text="Actividades importadas:"
+                       GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="lblTotalActividades" styleClass="stat-valor" text="—"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label styleClass="campo-label" text="Actividades visualizadas:"
+                       GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="lblTotalVisualizadas" styleClass="stat-valor" text="—"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label styleClass="campo-label" text="Anotaciones creadas:"
+                       GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label fx:id="lblTotalAnotaciones" styleClass="stat-valor" text="—"
+                       GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label styleClass="campo-label" text="Tiempo total:"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label fx:id="lblTotalTiempo" styleClass="stat-valor" text="—"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <columnConstraints>
+                    <ColumnConstraints minWidth="180"/>
+                    <ColumnConstraints minWidth="80"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints/><RowConstraints/><RowConstraints/>
+                    <RowConstraints/><RowConstraints/>
+                </rowConstraints>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- ── Botón cerrar ── -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT"
+              style="-fx-background-color: white; -fx-padding: 12 24 16 24;">
+            <Button onAction="#cerrar" styleClass="boton-principal"
+                    text="Cerrar" prefWidth="120.0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

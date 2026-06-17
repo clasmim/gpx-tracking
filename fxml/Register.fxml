@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<HBox minHeight="570.0" minWidth="840.0" prefHeight="570.0" prefWidth="840.0" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
+
+   <children>
+
+      <!-- PANEL IZQUIERDO -->
+      <VBox alignment="CENTER" prefWidth="320.0" spacing="20.0" styleClass="panel-izquierdo">
+         <children>
+
+            <ImageView fitHeight="210.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../source/resources/logo/logo_CRLS_lima.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </ImageView>
+
+            <Label styleClass="app-nombre-principal" text="Club Running La Safor" />
+
+            <VBox alignment="CENTER_LEFT" spacing="8.0">
+               <children>
+                  <Label styleClass="tics-texto" text="✓ Ya estás más cerca de formar parte del club." />
+                  <Label styleClass="tics-texto" text="✓ Tus rutas, tu progreso, todo en un solo lugar." />
+               </children>
+               <VBox.margin>
+                  <Insets top="18.0" />
+               </VBox.margin>
+            </VBox>
+
+            <Label alignment="CENTER" styleClass="version-texto" text="IPC 2025/2026">
+               <VBox.margin>
+                  <Insets top="4.0" />
+               </VBox.margin>
+            </Label>
+
+         </children>
+      </VBox>
+
+      <!-- PANEL DERECHO -->
+      <StackPane styleClass="panel-derecho-registro" HBox.hgrow="ALWAYS">
+         <children>
+
+            <VBox alignment="CENTER_LEFT" maxWidth="420.0" minWidth="420.0" prefWidth="420.0" spacing="9.0" StackPane.alignment="CENTER">
+
+               <children>
+
+                  <!-- CABECERA -->
+                  <VBox alignment="CENTER_LEFT" spacing="2.0" styleClass="bloque-superior-registro">
+                     <children>
+                        <Label styleClass="titulo-pantalla" text="Crear cuenta" />
+                        <Label styleClass="subtitulo-pantalla" text="Únete al Club de Running La Safor" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="12.0" />
+                     </VBox.margin>
+                  </VBox>
+
+                  <!-- FILA USUARIO + AVATAR -->
+                  <HBox alignment="TOP_LEFT" spacing="18.0">
+                     <children>
+
+                        <VBox alignment="CENTER_LEFT" spacing="3.0" styleClass="bloque-campo-registro">
+                           <children>
+                              <Label styleClass="campo-label" text="Usuario *" />
+                              <TextField fx:id="nicknameField" promptText="Nombre de usuario" styleClass="campo-texto-registro,campo-texto-registro-corto" />
+                              <Label fx:id="errorNick" managed="false" styleClass="error-mensaje" text="Error usuario" visible="false" />
+                              <Label styleClass="campo-hint" text="Entre 6 y 15 caracteres. Solo letras, dígitos, guion o subguion." />
+                           </children>
+                        </VBox>
+
+                        <VBox alignment="TOP_CENTER" spacing="5.0" styleClass="avatar-registro">
+                           <children>
+                              <Label styleClass="campo-label" text="Avatar (opcional)" />
+
+                              <StackPane minHeight="64.0" minWidth="64.0" prefHeight="64.0" prefWidth="64.0">
+                                 <children>
+                                    <Circle fx:id="avatarCircle" radius="32.0" styleClass="avatar-circulo" />
+                                    <ImageView fx:id="avatarPreview" fitHeight="64.0" fitWidth="64.0" managed="false" preserveRatio="false" visible="false" />
+                                    <Label fx:id="lblAvatarIniciales" styleClass="avatar-placeholder" text="👤" />
+                                 </children>
+                              </StackPane>
+
+                              <Button mnemonicParsing="false" onAction="#imagePick" styleClass="boton-avatar" text="Seleccionar" />
+
+                              <Label fx:id="lblAvatar" managed="false" styleClass="avatar-fichero" text="Ningún archivo seleccionado" visible="false" />
+                           </children>
+                        </VBox>
+
+                     </children>
+                  </HBox>
+
+                  <!-- CONTRASEÑA -->
+                  <VBox alignment="CENTER_LEFT" spacing="3.0" styleClass="bloque-campo-registro">
+                     <children>
+                        <Label styleClass="campo-label" text="Contraseña *" />
+
+                        <StackPane maxWidth="320.0" minWidth="320.0" prefWidth="320.0">
+                           <children>
+                              <PasswordField fx:id="passwordField" promptText="Mín. 8 caracteres" styleClass="campo-texto-registro,campo-password-con-ojo" />
+
+                              <TextField fx:id="passwordVisible" managed="false" promptText="Mín. 8 caracteres" styleClass="campo-texto-registro,campo-password-con-ojo" visible="false" />
+
+                              <Button focusTraversable="false" mnemonicParsing="false" onAction="#togglePassword" styleClass="boton-ojo-integrado" StackPane.alignment="CENTER_RIGHT">
+                                 <graphic>
+                                    <ImageView fx:id="iconoOjo" fitHeight="16.0" fitWidth="16.0" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/icons/eye_closed.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </StackPane>
+
+                        <Label fx:id="errorPassword" managed="false" styleClass="error-mensaje" text="Error contraseña" visible="false" />
+                        <Label styleClass="campo-hint" text="Mín. 8 caracteres con mayúscula, minúscula, dígito y símbolo (!@#$%&amp;*()-+=)." />
+                     </children>
+                  </VBox>
+
+                  <!-- CORREO -->
+                  <VBox alignment="CENTER_LEFT" spacing="3.0" styleClass="bloque-campo-registro">
+                     <children>
+                        <Label styleClass="campo-label" text="Correo electrónico *" />
+                        <TextField fx:id="emailField" promptText="usuario@dominio.com" styleClass="campo-texto-registro" />
+                        <Label fx:id="errorEmail" managed="false" styleClass="error-mensaje" text="Error email" visible="false" />
+                        <Label styleClass="campo-hint" text="Formato: usuario@dominio.com" />
+                     </children>
+                  </VBox>
+
+                  <!-- FECHA -->
+                  <VBox alignment="CENTER_LEFT" spacing="3.0" styleClass="bloque-campo-registro">
+                     <children>
+                        <Label styleClass="campo-label" text="Fecha de nacimiento *" />
+                        <DatePicker fx:id="datePicker" promptText="dd/mm/aaaa" styleClass="campo-texto-registro-fecha" />
+                        <Label fx:id="errorFecha" managed="false" styleClass="error-mensaje" text="Error fecha" visible="false" />
+<Label styleClass="campo-hint" text="Debes tener más de 12 años para registrarte." />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </VBox>
+
+                  <Label styleClass="texto-campos-obligatorios" text="* Campos obligatorios" />
+
+                  <!-- BOTONES -->
+                  <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="bloque-botones-formulario">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#cancelarAction" styleClass="boton-secundario" text="Volver" />
+                        <Button mnemonicParsing="false" onAction="#submitAction" styleClass="boton-principal" text="Crear cuenta" />
+                     </children>
+                  </HBox>
+
+               </children>
+            </VBox>
+
+         </children>
+      </StackPane>
+
+   </children>
+</HBox>

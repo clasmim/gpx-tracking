@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefWidth="460.0" prefHeight="580.0"
+            stylesheets="@../styles/estilos.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AcumuladoController">
+
+    <!-- ── Cabecera ─────────────────────────────────────────────── -->
+    <top>
+        <VBox style="-fx-background-color: #33691E; -fx-padding: 20 24 20 24; -fx-spacing: 6;">
+            <Label text="Acumulado de actividades"
+                   style="-fx-font-family: 'Montserrat-SemiBold'; -fx-font-size: 20px;
+                          -fx-font-weight: 600; -fx-text-fill: #B5E550;"/>
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <Label text="Periodo:"
+                       style="-fx-font-family: 'Montserrat-Regular'; -fx-font-size: 12px;
+                              -fx-text-fill: rgba(255,255,255,0.8);"/>
+                <ComboBox fx:id="comboPeriodo" prefWidth="160.0"
+                          onAction="#cambiarPeriodo"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- ── Contenido ────────────────────────────────────────────── -->
+    <center>
+        <VBox spacing="12.0" style="-fx-background-color: white; -fx-padding: 16;">
+
+            <!-- Número de actividades -->
+            <VBox styleClass="stat-card-acumulado">
+                <Label styleClass="stat-label" text="ACTIVIDADES"/>
+                <HBox alignment="BASELINE_LEFT" spacing="4.0">
+                    <Label fx:id="lblNumActividades" styleClass="stat-value" text="—"/>
+                    <Label styleClass="stat-unit" text="actividades"/>
+                </HBox>
+            </VBox>
+
+            <!-- Distancia total -->
+            <VBox styleClass="stat-card-acumulado">
+                <Label styleClass="stat-label" text="DISTANCIA TOTAL"/>
+                <HBox alignment="BASELINE_LEFT" spacing="4.0">
+                    <Label fx:id="lblDistancia" styleClass="stat-value" text="—"/>
+                    <Label styleClass="stat-unit" text="km"/>
+                </HBox>
+            </VBox>
+
+            <!-- Tiempo total -->
+            <VBox styleClass="stat-card-acumulado">
+                <Label styleClass="stat-label" text="TIEMPO TOTAL"/>
+                <HBox alignment="BASELINE_LEFT" spacing="4.0">
+                    <Label fx:id="lblTiempo" styleClass="stat-value" text="—"/>
+                </HBox>
+            </VBox>
+
+            <Separator/>
+
+            <!-- Ascenso total -->
+            <VBox styleClass="stat-card-acumulado">
+                <Label styleClass="stat-label" text="ASCENSO TOTAL"/>
+                <HBox alignment="BASELINE_LEFT" spacing="4.0">
+                    <Label fx:id="lblAscenso" styleClass="stat-value" text="—"/>
+                    <Label styleClass="stat-unit" text="m"/>
+                </HBox>
+            </VBox>
+
+            <!-- Descenso total -->
+            <VBox styleClass="stat-card-acumulado">
+                <Label styleClass="stat-label" text="DESCENSO TOTAL"/>
+                <HBox alignment="BASELINE_LEFT" spacing="4.0">
+                    <Label fx:id="lblDescenso" styleClass="stat-value" text="—"/>
+                    <Label styleClass="stat-unit" text="m"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+
+    <!-- ── Botón cerrar ──────────────────────────────────────────── -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: white; -fx-padding: 12 24 16 24;">
+            <Button onAction="#cerrar" styleClass="boton-principal"
+                    text="Cerrar" prefWidth="120.0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

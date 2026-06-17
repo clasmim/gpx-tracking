@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+<HBox alignment="CENTER"
+      maxHeight="64.0" minHeight="64.0" prefHeight="64.0"
+      spacing="0"
+      styleClass="tb2-barra"
+      stylesheets="@../styles/estilos.css"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ToolbarDashboardController">
+
+   <padding><Insets left="20.0" right="20.0" /></padding>
+
+   <!-- IZQUIERDA: Actividades + Sesiones -->
+   <HBox alignment="CENTER_LEFT" spacing="24.0" HBox.hgrow="ALWAYS">
+      <HBox.margin><Insets left="8.0" /></HBox.margin>
+
+      <Button onAction="#acumuladoAction" styleClass="tb2-btn">
+         <tooltip><Tooltip text="Ver acumulado de actividades" /></tooltip>
+         <graphic>
+            <HBox alignment="CENTER" spacing="7.0">
+               <ImageView fitHeight="18.0" fitWidth="18.0" preserveRatio="true">
+                  <image><Image url="@../source/resources/icons/directions_run.png" /></image>
+               </ImageView>
+               <Label mouseTransparent="true" styleClass="tb2-btn-label" text="Actividades" />
+            </HBox>
+         </graphic>
+      </Button>
+
+      <Button onAction="#historialAction" styleClass="tb2-btn">
+         <tooltip><Tooltip text="Ver historial de sesiones" /></tooltip>
+         <graphic>
+            <HBox alignment="CENTER" spacing="7.0">
+               <ImageView fitHeight="18.0" fitWidth="18.0" preserveRatio="true">
+                  <image><Image url="@../source/resources/icons/calendar_month.png" /></image>
+               </ImageView>
+               <Label mouseTransparent="true" styleClass="tb2-btn-label" text="Sesiones" />
+            </HBox>
+         </graphic>
+      </Button>
+
+   </HBox>
+
+   <!-- CENTRO: Logo + Nombre -->
+   <HBox alignment="CENTER" spacing="10.0">
+      <ImageView fitHeight="40.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+         <image><Image url="@../source/resources/logo/logo_CRLS_lima.png" /></image>
+      </ImageView>
+      <Label styleClass="tb2-titulo" text="Club Running La Safor" />
+   </HBox>
+
+   <!-- DERECHA: Mapas + Ayuda + Avatar + Logout -->
+   <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+      <HBox.margin><Insets right="8.0" /></HBox.margin>
+
+      <Button onAction="#mapasAction" styleClass="tb2-btn">
+         <tooltip><Tooltip text="Gestionar mapas del sistema" /></tooltip>
+         <HBox.margin><Insets right="14.0" /></HBox.margin>
+         <graphic>
+            <HBox alignment="CENTER" spacing="7.0">
+               <ImageView fitHeight="18.0" fitWidth="18.0" preserveRatio="true">
+                  <image><Image url="@../source/resources/icons/map.png" /></image>
+               </ImageView>
+               <Label mouseTransparent="true" styleClass="tb2-btn-label" text="Mapas" />
+            </HBox>
+         </graphic>
+      </Button>
+
+      <Button onAction="#about" styleClass="tb2-btn">
+         <tooltip><Tooltip text="Ayuda y acerca de" /></tooltip>
+         <graphic>
+            <HBox alignment="CENTER" spacing="7.0">
+               <ImageView fitHeight="18.0" fitWidth="18.0" preserveRatio="true">
+                  <image><Image url="@../source/resources/icons/help.png" /></image>
+               </ImageView>
+               <Label mouseTransparent="true" styleClass="tb2-btn-label" text="Ayuda" />
+            </HBox>
+         </graphic>
+      </Button>
+
+      <!-- Avatar — clic abre menú contextual con editar perfil y cerrar sesión -->
+      <StackPane fx:id="profileStack"
+                 maxHeight="38.0" maxWidth="38.0"
+                 minHeight="38.0" minWidth="38.0"
+                 prefHeight="38.0" prefWidth="38.0"
+                 onMouseClicked="#showMenu"
+                 style="-fx-cursor: hand;">
+         <HBox.margin><Insets left="6.0" /></HBox.margin>
+         <Circle fx:id="avatarCircle"
+                 fill="transparent"
+                 radius="19.0"
+                 stroke="transparent"
+                 strokeWidth="0" />
+         <ImageView fx:id="imgAvatar"
+                    fitHeight="38.0" fitWidth="38.0"
+                    managed="false"
+                    pickOnBounds="true"
+                    preserveRatio="false"
+                    visible="false" />
+         <Label fx:id="lblIniciales"
+                styleClass="avatar-iniciales"
+                text="?"
+                StackPane.alignment="CENTER" />
+      </StackPane>
+
+      <!-- Cerrar sesión -->
+      <Button onAction="#logoutDirect" styleClass="tb2-btn-logout">
+         <tooltip><Tooltip text="Cerrar sesión" /></tooltip>
+         <HBox.margin><Insets left="6.0" /></HBox.margin>
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" preserveRatio="true">
+               <image><Image url="@../source/resources/icons/logout.png" /></image>
+            </ImageView>
+         </graphic>
+      </Button>
+
+   </HBox>
+
+</HBox>

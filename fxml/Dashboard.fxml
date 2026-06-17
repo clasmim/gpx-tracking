@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<!--
+  Dashboard.fxml
+  Main shell: toolbar (top), activity panel (left), map+chart (center).
+
+  IMPORTANT: the fx:id on each <fx:include> must match the @FXML field name
+  in DashboardController with the "Controller" suffix stripped:
+    fx:id="toolbarDashboard"   →  @FXML ToolbarDashboardController toolbarDashboardController
+    fx:id="panelActividades"   →  @FXML PanelActividadesController  panelActividadesController
+    fx:id="mapaConGrafica"     →  @FXML MapaConGraficaController    mapaConGraficaController
+-->
+
+<BorderPane minHeight="900.0" minWidth="1400.0" prefHeight="900.0" prefWidth="1400.0" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+
+    <top>
+        <fx:include fx:id="toolbarDashboard" source="ToolbarDashboard.fxml" />
+    </top>
+
+    <left>
+        <fx:include fx:id="panelActividades" source="PanelActividades.fxml" />
+    </left>
+
+    <center>
+        <fx:include fx:id="mapaConGrafica" source="MapaConGrafica.fxml" />
+    </center>
+
+    <right>
+        <fx:include fx:id="statsPanel" source="StatsPanel.fxml" />
+    </right>
+
+</BorderPane>
