@@ -1,0 +1,1084 @@
+/*
+ * Hoja de estilos principal — Running La Safor
+ * IPC 2025/2026
+ */
+ 
+/*******************************************************************************
+ *                                                                             *
+ * High Contrast Theme                                                         *
+ *                                                                             *
+ ******************************************************************************/
+ 
+.contrast {
+    -app-color-hi: #5bf900;
+    -app-color-lo: black;
+    -app-hover: #666666;
+    -fx-background-color: -app-color-lo;
+}
+ 
+/*-------------------------- map pin ------------------------- */
+ 
+.map-pin {
+    -fx-shape: "M13.558,0C6.07,0,0,6.07,0,13.558s13.558,22.346,13.558,22.346s13.558-14.858,13.558-22.346S21.045,0,13.558,0z M13.558,20.762c-4.084,0-7.395-3.311-7.395-7.395s3.311-7.395,7.395-7.395c4.084,0,7.396,3.311,7.396,7.395S17.642,20.762,13.558,20.762z";
+    -fx-background-color: black, white;
+    -fx-background-insets: 0, 2;
+    -fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 10);
+    -fx-pref-width: 48;
+    -fx-pref-height: 60;
+}
+ 
+.map-pin .arrow-button .arrow {
+    -fx-padding: 0;
+}
+ 
+/* ══════════════════════════════════════════
+   PALETA DE COLORES
+   ══════════════════════════════════════════ */
+ 
+.root {
+    -color-verde-oscuro: #33691E;
+    -color-verde-medio: #8BC34A;
+    -color-lima-vibrante: #B5E550;
+    -color-blanco: #FFFFFF;
+    -color-gris-claro: #E0E0E0;
+    -color-rojo-error: #CC4444;
+ 
+    -color-lima-claro: #C4F248;
+    -color-lima-hover: #A5D540;
+    -color-lima-pressed: #8BC34A;
+    -color-fondo-suave: #F8FFF0;
+    -color-error-fondo: #FFF0F0;
+    -color-error-borde: #FFCCCC;
+ 
+    -color-texto-secundario: #757575;
+    -color-texto-suave: #9E9E9E;
+    -color-texto-muy-suave: #C0C0C0;
+    -color-texto-negro: #1A1A1A;
+ 
+    -color-borde: #E0E0DC;
+    -color-verde-stat: #33691E;
+}
+ 
+/* ══════════════════════════════════════════
+   PANEL IZQUIERDO — común Inicio/Login/Register
+   ══════════════════════════════════════════ */
+ 
+.panel-izquierdo {
+    -fx-background-color: -color-verde-oscuro;
+    -fx-pref-width: 320px;
+    -fx-min-width: 320px;
+    -fx-max-width: 320px;
+    -fx-padding: 40 32 32 32;
+    -fx-spacing: 20;
+    -fx-alignment: CENTER;
+}
+ 
+.app-nombre-principal {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-lima-vibrante;
+}
+ 
+.tics-texto {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-lima-vibrante;
+}
+ 
+.version-texto {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 10px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-blanco;
+    -fx-opacity: 0.5;
+}
+ 
+/* ══════════════════════════════════════════
+   PANELES DERECHOS
+   ══════════════════════════════════════════ */
+ 
+.panel-derecho-inicio {
+    -fx-background-color: -color-blanco;
+    -fx-padding: 55 48 45 48;
+    -fx-spacing: 24;
+    -fx-alignment: CENTER_LEFT;
+}
+ 
+.panel-derecho-login {
+    -fx-background-color: -color-blanco;
+    -fx-padding: 50 48 40 48;
+    -fx-spacing: 16;
+    -fx-alignment: CENTER;
+}
+ 
+.panel-derecho-registro {
+    -fx-background-color: -color-blanco;
+    -fx-padding: 22 44 20 44;
+    -fx-alignment: CENTER;
+}
+ 
+/* ══════════════════════════════════════════
+   TIPOGRAFÍA — jerarquía de textos
+   ══════════════════════════════════════════ */
+ 
+.titulo-pantalla {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 34px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-verde-oscuro;
+}
+ 
+.subtitulo-pantalla {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 12px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-texto-secundario;
+    -fx-opacity: 0.70;
+}
+ 
+.campo-label {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-verde-oscuro;
+}
+ 
+.separador-texto {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-texto-muy-suave;
+}
+ 
+.registro-texto {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-texto-suave;
+}
+ 
+.registro-enlace {
+    -fx-font-family: "Montserrat-Bold";
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-cursor: hand;
+}
+ 
+.registro-enlace:hover {
+    -fx-text-fill: -color-lima-vibrante;
+}
+ 
+.texto-legal {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 9px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-texto-muy-suave;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+ 
+.texto-campos-obligatorios {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 10px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-texto-secundario;
+}
+ 
+/* ══════════════════════════════════════════
+   CAMPOS DE TEXTO — genéricos Login
+   ══════════════════════════════════════════ */
+ 
+.campo-texto {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 12px;
+    -fx-font-weight: 400;
+ 
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-gris-claro;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+ 
+    -fx-padding: 8 12 8 12;
+    -fx-pref-height: 38px;
+    -fx-min-height: 38px;
+    -fx-max-height: 38px;
+ 
+    -fx-pref-width: 320px;
+    -fx-min-width: 320px;
+    -fx-max-width: 320px;
+ 
+    -fx-text-fill: -color-texto-negro;
+    -fx-prompt-text-fill: -color-texto-muy-suave;
+}
+ 
+.campo-texto:focused {
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(181, 229, 80, 0.25), 6, 0, 0, 0);
+}
+ 
+/* ══════════════════════════════════════════
+   CAMPOS DE REGISTRO — compactos
+   ══════════════════════════════════════════ */
+ 
+.campo-texto-registro {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 12px;
+    -fx-font-weight: 400;
+ 
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-gris-claro;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+ 
+    -fx-padding: 8 12 8 12;
+    -fx-pref-height: 36px;
+    -fx-min-height: 36px;
+    -fx-max-height: 36px;
+ 
+    -fx-pref-width: 320px;
+    -fx-min-width: 320px;
+    -fx-max-width: 320px;
+ 
+    -fx-text-fill: -color-texto-negro;
+    -fx-prompt-text-fill: -color-texto-muy-suave;
+}
+ 
+.campo-texto-registro:focused {
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(181, 229, 80, 0.25), 6, 0, 0, 0);
+}
+ 
+.campo-texto-registro-corto {
+    -fx-pref-width: 300px;
+    -fx-min-width: 300px;
+    -fx-max-width: 300px;
+}
+ 
+.campo-password-con-ojo {
+    -fx-padding: 8 42 8 12;
+}
+ 
+.campo-texto-registro-fecha {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 12px;
+    -fx-font-weight: 400;
+ 
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-gris-claro;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+ 
+    -fx-pref-width: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+ 
+    -fx-pref-height: 36px;
+    -fx-min-height: 36px;
+    -fx-max-height: 36px;
+ 
+    -fx-text-fill: -color-texto-negro;
+    -fx-prompt-text-fill: -color-texto-muy-suave;
+}
+ 
+.campo-texto-registro-fecha:focused {
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(181, 229, 80, 0.25), 6, 0, 0, 0);
+}
+ 
+.date-picker.campo-texto-registro-fecha > .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8 8 8 12;
+}
+ 
+.date-picker.campo-texto-registro-fecha > .arrow-button {
+    -fx-background-color: -color-gris-claro;
+    -fx-background-radius: 0 6 6 0;
+    -fx-pref-width: 34px;
+}
+ 
+.date-picker.campo-texto-registro-fecha:focused > .arrow-button {
+    -fx-background-color: -color-lima-vibrante;
+}
+ 
+/* Campo con error */
+.campo-texto-error {
+    -fx-border-color: -color-rojo-error;
+    -fx-border-width: 1.5px;
+}
+ 
+/* ══════════════════════════════════════════
+   MENSAJES DE ERROR
+   ══════════════════════════════════════════ */
+ 
+.error-mensaje {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 10px;
+    -fx-font-weight: 400;
+    -fx-text-fill: -color-rojo-error;
+ 
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 2 0 0 0;
+}
+ 
+/* ══════════════════════════════════════════
+   BOTÓN OJO — mostrar/ocultar contraseña
+   ══════════════════════════════════════════ */
+ 
+.boton-ojo {
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-gris-claro;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 10 12 10 12;
+    -fx-pref-height: 38px;
+    -fx-cursor: hand;
+}
+ 
+.boton-ojo:hover {
+    -fx-border-color: -color-lima-vibrante;
+    -fx-background-color: -color-fondo-suave;
+}
+ 
+.boton-ojo-integrado {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0 10 0 8;
+    -fx-pref-width: 38px;
+    -fx-min-width: 38px;
+    -fx-max-width: 38px;
+    -fx-pref-height: 36px;
+    -fx-min-height: 36px;
+    -fx-max-height: 36px;
+    -fx-cursor: hand;
+}
+ 
+.boton-ojo-integrado:hover {
+    -fx-background-color: -color-fondo-suave;
+    -fx-background-radius: 0 6 6 0;
+}
+ 
+/* ══════════════════════════════════════════
+   BOTONES FORMULARIO
+   ══════════════════════════════════════════ */
+ 
+.bloque-botones-formulario {
+    -fx-spacing: 14;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8 0 0 0;
+}
+ 
+.boton-principal {
+    -fx-font-family: "Montserrat-Bold";
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -color-verde-oscuro;
+ 
+    -fx-background-color: -color-lima-vibrante;
+    -fx-background-radius: 6px;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1.5px;
+ 
+    -fx-pref-width: 226px;
+    -fx-min-width: 226px;
+    -fx-max-width: 226px;
+ 
+    -fx-pref-height: 38px;
+    -fx-min-height: 38px;
+    -fx-max-height: 38px;
+ 
+    -fx-cursor: hand;
+}
+ 
+.boton-principal:hover {
+    -fx-background-color: -color-lima-hover;
+    -fx-border-color: -color-verde-medio;
+    -fx-effect: dropshadow(gaussian, rgba(181, 229, 80, 0.4), 8, 0, 0, 2);
+}
+ 
+.boton-principal:pressed {
+    -fx-background-color: -color-lima-pressed;
+    -fx-border-color: -color-verde-medio;
+}
+ 
+.boton-secundario {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-verde-oscuro;
+ 
+    -fx-background-color: -color-blanco;
+    -fx-background-radius: 6px;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1.5px;
+ 
+    -fx-pref-width: 80px;
+    -fx-min-width: 80px;
+    -fx-max-width: 80px;
+ 
+    -fx-pref-height: 38px;
+    -fx-min-height: 38px;
+    -fx-max-height: 38px;
+ 
+    -fx-cursor: hand;
+}
+ 
+.boton-secundario:hover {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-verde-medio;
+}
+ 
+.boton-secundario:pressed {
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-verde-medio;
+    -fx-effect: none;
+}
+ 
+/* ══════════════════════════════════════════
+   BOTONES TIPO TARJETA — PANTALLA INICIO
+   ══════════════════════════════════════════ */
+ 
+.tarjeta-acceso-principal {
+    -fx-background-color: -color-lima-vibrante;
+    -fx-background-radius: 14px;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-width: 2px;
+    -fx-border-radius: 14px;
+    -fx-padding: 22 24 22 24;
+    -fx-alignment: center;
+    -fx-spacing: 4;
+ 
+    -fx-pref-width: 420px;
+    -fx-min-width: 420px;
+    -fx-max-width: 420px;
+ 
+    -fx-pref-height: 95px;
+    -fx-min-height: 95px;
+ 
+    -fx-cursor: hand;
+}
+ 
+.tarjeta-acceso-principal:hover {
+    -fx-background-color: -color-lima-claro;
+    -fx-border-color: -color-verde-medio;
+    -fx-effect: dropshadow(gaussian, rgba(181, 229, 80, 0.45), 12, 0, 0, 3);
+}
+ 
+.tarjeta-acceso-principal:pressed {
+    -fx-background-color: -color-verde-medio;
+    -fx-border-color: -color-verde-medio;
+}
+ 
+.tarjeta-acceso-secundaria {
+    -fx-background-color: -color-blanco;
+    -fx-background-radius: 14px;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-width: 2px;
+    -fx-border-radius: 14px;
+    -fx-padding: 22 24 22 24;
+    -fx-alignment: center;
+    -fx-spacing: 4;
+ 
+    -fx-pref-width: 420px;
+    -fx-min-width: 420px;
+    -fx-max-width: 420px;
+ 
+    -fx-pref-height: 95px;
+    -fx-min-height: 95px;
+ 
+    -fx-cursor: hand;
+}
+ 
+.tarjeta-acceso-secundaria:hover {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-effect: dropshadow(gaussian, rgba(181, 229, 80, 0.25), 10, 0, 0, 2);
+}
+ 
+.tarjeta-acceso-secundaria:pressed {
+    -fx-background-color: -color-blanco;
+}
+ 
+.tarjeta-acceso-titulo {
+    -fx-font-family: "Montserrat-Bold";
+    -fx-font-size: 20px;
+    -fx-text-fill: -color-verde-oscuro;
+}
+ 
+.tarjeta-acceso-subtitulo {
+    -fx-font-family: "Montserrat-Medium";
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-opacity: 0.75;
+}
+ 
+.separador-inicio {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-gris-claro;
+    -fx-alignment: center;
+}
+ 
+.separador-linea {
+    -fx-background-color: -color-gris-claro;
+    -fx-pref-height: 1px;
+    -fx-max-height: 1px;
+}
+ 
+/* ══════════════════════════════════════════
+   REGISTRO — agrupaciones y avatar
+   ══════════════════════════════════════════ */
+ 
+.bloque-campo-registro {
+    -fx-spacing: 3;
+}
+ 
+.bloque-superior-registro {
+    -fx-spacing: 2;
+}
+ 
+.avatar-registro {
+    -fx-spacing: 5;
+    -fx-alignment: TOP_CENTER;
+}
+ 
+.avatar-circulo {
+    -fx-fill: -color-fondo-suave;
+    -fx-stroke: -color-lima-vibrante;
+    -fx-stroke-width: 2px;
+}
+ 
+.avatar-placeholder {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 16px;
+    -fx-text-fill: -color-verde-medio;
+}
+ 
+.boton-avatar {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-verde-oscuro;
+ 
+    -fx-background-color: -color-blanco;
+    -fx-background-radius: 6px;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1.5px;
+ 
+    -fx-pref-width: 80px;
+    -fx-min-width: 80px;
+    -fx-max-width: 80px;
+ 
+    -fx-pref-height: 22px;
+    -fx-min-height: 22px;
+    -fx-max-height: 22px;
+ 
+    -fx-cursor: hand;
+}
+ 
+.boton-avatar:hover {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-verde-medio;
+}
+ 
+.avatar-fichero {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 9px;
+    -fx-text-fill: -color-texto-secundario;
+}
+ 
+/* ── ListView de actividades ────────────────────────────── */
+.lista-actividades {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.lista-actividades .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8 12 8 12;
+    -fx-border-color: transparent transparent -color-gris-claro transparent;
+    -fx-border-width: 0 0 0.5 0;
+    -fx-cursor: hand;
+}
+.lista-actividades .list-cell:hover {
+    -fx-background-color: -color-fondo-suave;
+}
+.lista-actividades .list-cell:selected {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: transparent transparent -color-gris-claro -color-verde-medio;
+    -fx-border-width: 0 0 0.5 3;
+}
+.lista-actividades .list-cell:selected .lbl-act-nombre {
+    -fx-text-fill: -color-verde-oscuro;
+}
+ 
+.lbl-act-nombre {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-texto-negro;
+}
+
+.lbl-act-fecha {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-text-fill: -color-texto-suave;
+}
+
+.lbl-act-dist {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-font-weight: 600;
+}
+ 
+.titulo-modificar{
+    -fx-background-color: -color-verde-oscuro;
+    -fx-border-color: transparent;
+    -fx-text-fill: -color-blanco;
+}
+ 
+.stats-grid {
+    -fx-padding: 0;
+}
+ 
+.stat-card {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 1px;
+    -fx-padding: 7 14 8 14;
+    -fx-spacing: 4;
+}
+ 
+.stat-label {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 9px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-texto-suave;
+}
+ 
+.stat-value {
+    -fx-font-family: "Montserrat-Light";
+    -fx-font-size: 25px;
+    -fx-font-weight: 300;
+    -fx-text-fill: -color-verde-stat;
+}
+ 
+.stat-unit {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-text-fill: -color-texto-suave;
+    -fx-padding: 0 0 5 0;
+}
+
+
+
+/* ══════════════════════════════════════════
+   VARIABLES FALTANTES — añadidas
+   ══════════════════════════════════════════ */
+ 
+ 
+/* ══════════════════════════════════════════
+   PANEL DERECHO — StatsPanel
+   ══════════════════════════════════════════ */
+ 
+.stats-panel-right {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 0 0 0 1px;
+    -fx-pref-width: 260px;
+    -fx-min-width: 240px;
+    -fx-max-width: 260px;
+}
+ 
+.stats-activity-name {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-texto-negro;
+    -fx-wrap-text: true;
+}
+ 
+.stats-fecha {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-text-fill: -color-texto-suave;
+}
+ 
+/* titulo-seccion usado en PanelActividades */
+.titulo-seccion {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 26px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-verde-oscuro;
+}
+
+/* ══════════════════════════════════════════
+   CHART — perfil de desnivel
+   ══════════════════════════════════════════ */
+
+.chart-series-area-fill {
+    -fx-fill: -color-lima-vibrante;
+    -fx-opacity: 0.25;
+}
+
+.chart-series-area-line {
+    -fx-stroke: -color-verde-medio;
+    -fx-stroke-width: 2px;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: -color-gris-claro;
+    -fx-stroke-width: 0.5px;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.axis-label {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 10px;
+    -fx-text-fill: -color-texto-suave;
+}
+
+.axis {
+    -fx-tick-label-font-family: "Montserrat-Regular";
+    -fx-tick-label-font-size: 10px;
+    -fx-tick-label-fill: -color-texto-suave;
+}
+
+/* ══════════════════════════════════════════
+   STAT CARDS MODERNAS
+   ══════════════════════════════════════════ */
+
+.stat-card-moderna {
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 7 12 7 12;
+    -fx-spacing: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 2);
+}
+
+.stat-card-moderna:hover {
+    -fx-border-color: -color-verde-medio;
+    -fx-effect: dropshadow(gaussian, rgba(51,105,30,0.12), 8, 0, 0, 3);
+}
+
+.stat-icono {
+    -fx-font-size: 13px;
+}
+
+.stats-titulo-panel {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-verde-oscuro;
+}
+
+.stats-panel-right {
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 0 0 0 1px;
+    -fx-pref-width: 260px;
+    -fx-min-width: 240px;
+    -fx-max-width: 260px;
+}
+
+.stat-card-acumulado {
+    -fx-background-color: -color-blanco;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 8 12 8 12;
+    -fx-spacing: 3;
+    -fx-max-height: 70px;
+    -fx-min-height: 70px;
+    -fx-pref-height: 70px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 2);
+}
+
+.titulo-toolbar {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 34px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-blanco;
+}
+
+/* ── Selección tabla en verde ── */
+.table-row-cell:selected {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-verde-medio;
+    -fx-border-width: 0 0 0 3;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: -color-verde-oscuro;
+    
+    
+}
+
+
+
+.tooltip {
+    -fx-background-color: -color-blanco;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-padding: 6 10 6 10;
+    -fx-background-radius: 6px;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+}
+
+/* ══════════════════════════════════════════
+   TOOLBAR del dashboard
+   ══════════════════════════════════════════ */
+
+.tb2-barra {
+    -fx-background-color: -color-verde-oscuro;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);
+}
+
+.tb2-titulo {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 22px;
+    -fx-text-fill: -color-blanco;
+}
+
+.tb2-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.25);
+    -fx-border-width: 1.5px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.tb2-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-border-color: rgba(255,255,255,0.45);
+}
+
+.tb2-btn:pressed {
+    -fx-background-color: rgba(255,255,255,0.07);
+    -fx-border-color: rgba(255,255,255,0.2);
+}
+
+.tb2-btn-label {
+    -fx-font-family: "Montserrat-Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(255,255,255,0.90);
+}
+
+.tb2-btn-logout {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.25);
+    -fx-border-width: 1.5px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8 10 8 10;
+    -fx-cursor: hand;
+}
+
+.tb2-btn-logout:hover {
+    -fx-background-color: rgba(204,68,68,0.2);
+    -fx-border-color: -color-rojo-error;
+}
+
+.tb2-btn-logout:pressed {
+    -fx-background-color: rgba(204,68,68,0.12);
+}
+
+.avatar-iniciales {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-blanco;
+    -fx-font-weight: 600;
+}
+
+/* ══════════════════════════════════════════
+   MAPA — toolbar superior, velocidad y zoom
+   ══════════════════════════════════════════ */
+
+.map-toolbar {
+    -fx-background-color: #FAFCF8;
+    -fx-border-color: transparent transparent -color-borde transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.boton-velocidad {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 11px;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-background-color: white;
+    -fx-border-color: -color-verde-medio;
+    -fx-border-width: 1.3px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 5 14 5 14;
+    -fx-min-width: 82px;
+    -fx-pref-width: 82px;
+    -fx-max-width: 82px;
+    -fx-cursor: hand;
+}
+
+.boton-velocidad:hover {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-lima-vibrante;
+}
+
+.boton-velocidad:selected {
+    -fx-background-color: -color-lima-vibrante;
+    -fx-border-color: -color-lima-vibrante;
+    -fx-text-fill: -color-verde-oscuro;
+}
+
+.zoom-label {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-text-fill: -color-texto-secundario;
+}
+
+.boton-zoom {
+    -fx-background-color: white;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 12px;
+    -fx-pref-width: 28px;
+    -fx-pref-height: 24px;
+    -fx-cursor: hand;
+}
+
+.boton-zoom:hover {
+    -fx-border-color: -color-verde-medio;
+    -fx-background-color: -color-fondo-suave;
+}
+
+.slider-zoom .track {
+    -fx-background-color: #DCE8D6;
+    -fx-background-radius: 4px;
+    -fx-pref-height: 4px;
+}
+
+.slider-zoom .thumb {
+    -fx-background-color: -color-verde-medio;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 13px;
+    -fx-pref-height: 13px;
+}
+
+.slider-zoom .thumb:hover {
+    -fx-background-color: -color-lima-vibrante;
+}
+
+/* Tooltips blancos y verdes */
+.tooltip {
+    -fx-background-color: white;
+    -fx-text-fill: -color-verde-oscuro;
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 11px;
+    -fx-padding: 7 10 7 10;
+    -fx-background-radius: 8px;
+    -fx-border-color: -color-borde;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.campo-hint {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 10px;
+    -fx-text-fill: -color-texto-suave;
+    -fx-padding: 0 0 0 2;
+}
+
+/* ══════════════════════════════════════════
+   VENTANA AYUDA — pegar al final del CSS
+   ══════════════════════════════════════════ */
+
+.ayuda-cabecera {
+    -fx-background-color: -color-verde-oscuro;
+}
+
+.ayuda-titulo {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 18px;
+    -fx-text-fill: -color-blanco;
+}
+
+.ayuda-subtitulo {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255,255,255,0.75);
+}
+
+.ayuda-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.ayuda-seccion-titulo {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-verde-oscuro;
+}
+
+.ayuda-paso-titulo {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-verde-oscuro;
+}
+
+.ayuda-texto {
+    -fx-font-family: "Montserrat-Regular";
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-texto-negro;
+    -fx-line-spacing: 2;
+}
+
+.ayuda-texto-bold {
+    -fx-font-family: "Montserrat-SemiBold";
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-texto-negro;
+}
+
+.ayuda-separador {
+    -fx-background-color: -color-borde;
+}
+
+.ayuda-pie {
+    -fx-background-color: -color-fondo-suave;
+    -fx-border-color: -color-borde transparent transparent transparent;
+    -fx-border-width: 1px;
+}
