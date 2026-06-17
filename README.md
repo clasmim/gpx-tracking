@@ -10,3 +10,4 @@ Simply create an account (they are saved locally) and upload a GPX file.
 ## Collaborator:
 Team of 2 formed from university students:
 - Cristina Nácher
+- Chafik Laslouni
